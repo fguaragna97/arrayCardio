@@ -57,12 +57,28 @@ const results2 = inventors.map(function (obj) {
   return element;
 });
 
-console.log(results2);
-
 //Array.sort
 // sort the inventors by birthdate, oldest to youngest
+
+const results3 = inventors.sort(function (a, b) {
+  return b.year - a.year;
+});
 
 //Array Reduce
 // how many years did all the inventors lived?
 
+// a is the accomulator
+// b is the object
+const results4 = inventors.reduce((a, b) => {
+  let lived = b.passed - b.year;
+  return a + lived;
+}, 0);
+
 // Sort the inventors by years lived?
+
+const results5 = inventors.sort(function (a, b) {
+  let livedA = a.passed - a.year;
+  let livedB = b.passed - b.year;
+  return livedA - livedB;
+});
+console.log(results5);
